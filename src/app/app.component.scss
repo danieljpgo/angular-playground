@@ -8,23 +8,31 @@
   display: grid;
   grid-gap: 20px;
 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-  .grid-box {
-    background: #ffffff;
-    border-radius: 5px;
-    box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.4);
-    .grid-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      grid-gap: 16px;
-      padding: 16px;
-      div {
-        height: 100px;
-        border: solid 1px #616161;
+  .grid-outside {
+    display: grid;
+    grid-gap: 20px;
+    .grid-box {
+      background: #ffffff;
+      border-radius: 5px;
+      box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.4);
+      .grid-content {
         display: grid;
-        place-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-gap: 16px;
+        padding: 16px;
+        div {
+          height: 100px;
+          border: solid 1px #616161;
+          display: grid;
+          place-items: center;
+        }
       }
     }
+  }
+  .grid-outside:nth-child(1) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .grid-outside:nth-child(2) {
+    grid-template-columns: auto;
   }
 }
